@@ -20,7 +20,7 @@ export class InputComponent implements OnInit, AfterContentInit {
   ngAfterContentInit() {
   	this.input = this.model;
   	if (this.input === undefined) {
-  		throw new Error("Essa diretiva precisar ser usada com diretiva ngModel");
+  		throw new Error('Essa diretiva precisar ser usada com diretiva ngModel');
   	}
   }
 
