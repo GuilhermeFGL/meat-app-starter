@@ -1,0 +1,31 @@
+import {Injectable} from '@angular/core';
+
+import {ShoppingCartService} from '../restaurant-detail/shopping-cart/shopping-cart.service';
+import {CartItem} from '../restaurant-detail/shopping-cart/cart-item.model';
+
+@Injectable()
+export class OrderService {
+
+	constructor(private cartService: ShoppingCartService) { }
+
+	cartItems(): CartItem[] {
+		return this.cartService.itens;
+	}
+
+	increaseQty(item: CartItem): void {
+		this.cartService.increaseQty(item);
+	}
+
+	decreaseQty(item: CartItem): void {
+		this.cartService.decreaseQty(item);
+	}
+
+	remove(item: CartItem): void {
+		this.cartService.remove(item);
+	}
+
+	itemsValue(): number {
+		return this.cartService.total();
+	}
+
+}

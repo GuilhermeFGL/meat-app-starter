@@ -23,6 +23,9 @@ import { ShoppingCartService} from './restaurant-detail/shopping-cart/shopping-c
 import { OrderComponent } from './order/order.component';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
+import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component';
 
 
 @NgModule({
@@ -40,7 +43,9 @@ import { RadioComponent } from './shared/radio/radio.component';
     ReviewsComponent,
     OrderComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItemsComponent,
+    DeliveryCostsComponent
   ],
   imports: [
     FormsModule,
@@ -51,6 +56,7 @@ import { RadioComponent } from './shared/radio/radio.component';
   providers: [
     RestaurantsService, 
     ShoppingCartService, 
+    OrderService,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
